@@ -1,0 +1,22 @@
+body {
+  color: $text;
+  font-family: $ff;
+  background: $body;
+  overflow-x: hidden;
+
+  .container {
+    max-width: 1400px;
+    padding: 0 $gap-x5;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    @include adaptive(mobile) {
+      max-width: 100%;
+      padding: 0 $gap-x3;
+    }
+  }
+}
+
+.overlay {
+  overflow: hidden;
+}

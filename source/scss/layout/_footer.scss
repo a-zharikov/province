@@ -1,0 +1,152 @@
+.footer {
+  position: relative;
+  background: $footer;
+  padding: $gap-x6;
+  border-radius: $br-x3 $br-x3 0 0;
+  box-sizing: border-box;
+
+  @include adaptive(mobile) {
+    padding: $gap-x5 $gap-x3;
+  }
+
+  &-content {
+    margin-bottom: $gap-x6;
+    @include flex(row,space-between,center);
+
+    @include adaptive(mobile) {
+      gap: $gap-x6;
+      @include flex(column,center,center);
+    }
+
+    &__logo {
+      
+      img {
+        height: 52px;
+      }
+    }
+
+    &__nav {
+      gap: $gap-x6;
+      @include flex(row,flex-end,center);
+
+      @include adaptive(mobile) {
+        gap: $gap-x7;
+        @include flex(column,center,center);
+      }
+
+      .nav {
+        @include adaptive(mobile) {
+          gap: $gap-x3;
+          @include flex(column,center,center);
+        }
+
+        a {
+          color: $text;
+          text-decoration: none;
+          text-transform: $tc-u;
+          @include transition;
+
+          &:hover {
+            color: $text-menu;
+          }
+        }
+
+        &-site {
+          gap: $gap-x3;
+          margin-bottom: $gap-x3;
+          @include flex(row,flex-end,center);
+
+          @include adaptive(mobile) {
+            @include flex(row,center,center);
+          }
+          
+          a {
+            letter-spacing: 0.08px;
+            @include font($fs-x4,$lh-x4,$fw-sb);
+          }
+        }
+
+        &-sub {
+          gap: $gap-x3;
+          @include flex(row,flex-end,center);
+
+          @include adaptive(mobile) {
+            @include flex(row,center,center);
+            flex-wrap: wrap;
+          }
+          
+          a {
+            letter-spacing: 0.05px;
+            @include font($fs-x3,$lh-x3,$fw-sb);
+
+            @include adaptive(mobile) {
+              flex: 0 0 auto;
+            }
+          }
+        }
+      }
+
+      .social {
+        gap: $gap-x4;
+        @include flex(row,flex-end,center);
+
+        a {
+          text-decoration: none;
+          color: $text;
+          border: $bw-x0-5 solid $text;
+          border-radius: $br-x3;
+          padding: $gap-x2;
+          box-sizing: border-box;
+          @include flex(row,center,center);
+          @include transition;
+
+          i {
+            font-size: $icon-x6;
+            line-height: 100%;
+            @include transition;
+          }
+
+          &:hover {
+            i {
+              color: $white;
+            }
+
+            &:nth-of-type(1) {
+              background: $vk;
+              border-color: $vk;
+            }
+            &:nth-of-type(2) {
+              background: $ok;
+              border-color: $ok;
+            }
+            &:nth-of-type(3) {
+              background: $tg;
+              border-color: $tg;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-text {
+    color: $text;
+    opacity: .5;
+    @include font($fs-x3,$lh-x5,$fw-r);
+  }
+
+  &-16 {
+    color: $body;
+    position: absolute;
+    bottom: 0;
+    right: -$gap-x1;
+    bottom: -$gap-x1;
+    @include font($fs-x12,$lh-x11,$fw-sb);
+  }
+
+  .container {
+    @include adaptive(mobile) {
+      padding: 0;
+    }
+  }
+}

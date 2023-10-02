@@ -1,0 +1,18 @@
+@mixin brd-cr($property, $border-color: transparent, $opacity: 1) {
+  #{$property}: rgba($border-color, $opacity);
+}
+
+@mixin border($bt: 1px, $br: 1px, $bb: 1px, $bl: 1px, $bc: var(--text), $opacity: 1 ) {
+  border-top: #{$bt}px solid $bc;
+  border-right: #{$br}px solid $bc;
+  border-bottom: #{$bb}px solid $bc;
+  border-left: #{$bl}px solid $bc;
+  @include brd-cr(border-color, $bc, $opacity);
+}
+
+
+@mixin mobile_scroll {
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}

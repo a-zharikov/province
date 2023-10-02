@@ -1,0 +1,58 @@
+.checkbox {
+  &-control {
+    margin-bottom: $gap-x5;
+    cursor: pointer;
+    @include flex(row,flex-start,center);
+
+    input {
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+
+      &:checked {
+        & ~ .checkbox-control__indicator {
+          border-color: $gray;
+
+          &:after {
+            display: block;
+          }
+        }
+      }
+      &:disabled {
+        & ~ .checkbox-control__indicator {
+          background: transparent;
+          opacity: .4;
+          pointer-events: none;
+        }
+        &:after {
+          content: '';
+        }
+      }
+    }
+    &__indicator {
+      height: $size-x5;
+      width: $size-x5;
+      position: relative;
+      margin-right: $gap-x3;
+      border: $bw-x0-5 solid $gray;
+
+      &:after {
+        content: '';
+        height: $size-x5;
+        width: $size-x5;
+        box-sizing: unset;
+        color: $gray;
+        background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.1' id='check' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 768 768' style='enable-background:new 0 0 768 768;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:%2340b4ea;%7D%0A%3C/style%3E%3Cg id='icomoon-ignore'%3E%3C/g%3E%3Cpath class='st0' d='M282,523.6l336.4-336.4l44.7,44.7L282,612.9L104.9,435.7l44.7-44.7L282,523.6z'/%3E%3C/svg%3E%0A");
+        display: none;
+        @include center;
+      }
+    }
+    &:hover {
+      .checkbox-control__indicator {
+        &:after {
+          display: block;
+        }
+      }
+    }
+  }
+}

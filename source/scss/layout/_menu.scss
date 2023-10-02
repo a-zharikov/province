@@ -1,0 +1,157 @@
+nav {
+  box-sizing: border-box;
+  background: $menu;
+  padding: $gap-x3 $gap-x3 $gap-x3 $gap-x10;
+  border-radius: $br-x3;
+  margin-bottom: $gap-x5;
+  @include flex(row,space-between,center);
+
+  @include adaptive(mobile) {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    padding: $gap-x5;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transform: translateX(100%);
+    @include transition;
+    @include flex(column,flex-start,stretch);
+
+    &.active {
+      transform: translateX(0);
+    }
+  }
+
+  ul {
+    gap: $gap-x10;
+    @include flex(row,flex-start,center);
+
+    @include adaptive(mobile) {
+      gap: 0;
+      @include flex(column,flex-start,stretch);
+    }
+
+    li {
+      @include adaptive(mobile) {
+        @include border(1,0,0,0,$text-menu,.3);
+      }
+
+      a {
+        color: $text-menu;
+        text-decoration: none;
+        text-transform: $tc-u;
+        padding: $gap-x4 0;
+        @include font($fs-x5,$lh-x5,$fw-sb);
+        @include transition;
+
+        @include adaptive(mobile) {
+          padding: $gap-x4 $gap-x2;
+          display: block;
+        }
+
+        &:hover {
+          color: $text-menu-hover;
+        }
+      }
+    }
+  }
+
+  form {
+    gap: $gap-x2;
+    background: $white;
+    box-sizing: border-box;
+    border-radius: $br-x3;
+    padding: 0 $gap-x2;
+    @include flex(row,flex-start,center);
+
+    input {
+      background: transparent;
+      padding: $gap-x3;
+      border: 0;
+    }
+
+    button {
+      background: transparent;
+      
+      i {
+        color: $text;
+        font-size: $icon-x6;
+        opacity: .6;
+      }
+    }
+  }
+
+  .head {
+    gap: $gap-x6;
+    margin-bottom: $gap-x5;
+    @include flex(row,space-between,center);
+
+    a {
+      text-decoration: none;
+    }
+
+    form {
+      flex: 1 0 auto;
+    }
+
+    .close {
+      color: $text;
+      opacity: .4;
+      font-size: $icon-x7;
+    }
+  }
+
+  .city {
+    margin-top: $gap-x9;
+    gap: $gap-x2;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    @include flex(row,center,center);
+
+    &__label {
+      opacity: .4;
+      @include font($fs-x3,$lh-x3,$fw-sb);
+    }
+
+    &__name {
+      @include font($fs-x4,$lh-x4,$fw-sb);
+      gap: $gap-x1;
+      @include flex(flex,center,center);
+
+      i {
+        color: $danger;
+      }
+    }
+  }
+
+  .social {
+    margin-top: $gap-x5;
+    gap: $gap-x4;
+    flex: 1 0 auto;
+    @include flex(row,center,flex-end);
+
+    a {
+      text-decoration: none;
+      color: $text-menu;
+      border: $bw-x0-5 solid $text-menu;
+      border-radius: $br-x3;
+      padding: $gap-x2;
+      box-sizing: border-box;
+      @include flex(row,center,center);
+      @include transition;
+
+      i {
+        font-size: $icon-x6;
+        line-height: 100%;
+        @include transition;
+      }
+    }
+  }
+}

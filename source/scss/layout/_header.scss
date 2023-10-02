@@ -1,0 +1,138 @@
+.header {
+  margin: $gap-x5 0;
+  @include flex(row,space-between,center);
+
+  @include adaptive(mobile) {
+    img {
+      height: 48px;
+    }
+
+    a {
+      color: $text;
+      text-decoration: none;
+
+      i {
+        opacity: .4;
+        font-size: $icon-x7;
+      }
+    }
+  }
+
+  &-city {
+    gap: $gap-x2;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    @include flex(column,center,center);
+
+    &__label {
+      opacity: .4;
+      @include font($fs-x3,$lh-x3,$fw-sb);
+    }
+
+    &__name {
+      @include font($fs-x4,$lh-x4,$fw-sb);
+      gap: $gap-x1;
+      @include flex(flex,center,center);
+
+      i {
+        color: $danger;
+      }
+    }
+
+    &__all {
+      position: absolute;
+      top: $gap-x12;
+      right: 0;
+      background: $white;
+      border-radius: $br-x3;
+      padding: $gap-x5 $gap-x8;
+      box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.04);
+      column-count: 2;
+      column-gap: $gap-x10;
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0;
+      transform: translateY($size-x9);
+      @include transition;
+
+      @include adaptive(mobile) {
+        position: relative;
+        top: $gap-x6;
+        display: none;
+      }
+
+      &::before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 10px 12px 10px;
+        border-color: transparent transparent $white transparent;
+        position: absolute;
+        top: -12px;
+        right: 24px;
+
+        @include adaptive(mobile) {
+          right: 50%;
+          margin-right: -6px;
+        }
+      }
+
+      .item {
+        gap: $gap-x2;
+        margin-bottom: $gap-x5;
+        @include flex(column,flex-start,center);
+
+        &-title {
+          color: $city;
+          position: relative;
+          @include font($fs-x4,$lh-x4,$fw-sb);
+
+          span {
+            background: $white;
+            position: relative;
+            padding: 0 $gap-x1;
+            z-index: 2;
+          }
+
+          &::after {
+            content: '';
+            width: 100px;
+            height: 1px;
+            display: block;
+            position: absolute;
+            background: $city;
+            z-index: 1;
+            @include center;
+          }
+        }
+
+        &-link {
+          display: block;
+          text-align: center;
+          text-decoration: none;
+          color: $text;
+          white-space: nowrap;
+          @include transition;
+
+          &:hover {
+            color: $city;
+          }
+        } 
+      }
+
+      &.active {
+        z-index: 10;
+        opacity: 1;
+        pointer-events: all;
+        transform: translateY(0px);
+
+        @include adaptive(mobile) {
+          display: block;
+          margin-bottom: $gap-x5;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+section {
+  width: 80vw;
+  box-sizing: border-box;
+  gap: $gap-x4;
+  padding: $gap-x9 0;
+  margin: 0 auto;
+  @include flex(column,flex-start,flex-start);
+
+  h1 {
+    @include h1;
+  }
+  h2 {
+    @include h2;
+  }
+  h3 {
+    @include h3;
+  }
+  p {
+    @include p;
+  }
+  ul {
+    @include ul;
+  }
+  ol {
+    @include ol;
+  }
+  blockquote {
+    @include blockquote;
+  }
+  table {
+    @include table;
+  }
+  hr {
+    @include hr;
+  }
+
+  .item {
+    width: 100%;
+    gap: $gap-x4;
+    @include flex(row,flex-start,flex-start)
+  }
+}

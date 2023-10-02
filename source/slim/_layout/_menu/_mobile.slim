@@ -1,0 +1,30 @@
+nav
+  .head 
+    form action="#"
+      input type="text" placeholder="Введите ваш запрос"
+      button 
+        i.icon.search 
+    a.js-hide-menu href="javascript:void(0);" 
+      i.icon.close
+  ul
+    li
+      a href="" Страна
+    li
+      a href="" Стиль жизни
+    li
+      a href="" Звезды
+    li
+      a href="" Регионы
+  .city.js-show-city
+    .city__label Ваш город
+    .city__name
+      i.icon.location 
+      |Москва
+  include _layout/_header/_city
+  .social 
+    a href="" target="_blank"
+      i.icon.vk
+    a href="" target="_blank"
+      i.icon.ok 
+    a href="" target="_blank"
+      i.icon.tg

@@ -1,0 +1,19 @@
+input {
+  width: $size-100;
+  border: $bw-x0-5 solid $gray;
+  border-radius: $br-x2;
+  box-sizing: border-box;
+  padding: $gap-x3 $gap-x4;
+  color: $text;
+  @include font($fs-x4,$lh-x4,$fw-m);
+  @include transition;
+  &:focus {
+    border-color: $primary;
+  }
+  &:disabled {
+    opacity: .2;
+  }
+  &.error {
+    border-color: $danger;
+  }
+}

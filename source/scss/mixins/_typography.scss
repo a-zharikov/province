@@ -1,0 +1,196 @@
+@mixin h1() {
+  color: $text;
+  font: {
+    family: $ff serif;
+    size: $fs-x16;
+    weight: $fw-m;
+  }
+  line-height: $lh-x17;
+  margin-bottom: $gap-x9;
+  @include adaptive(mobile) {
+    font: {
+      size: $fs-x9;
+    }
+    line-height: $lh-x11;
+    margin-bottom: $gap-x5;
+  }
+}
+@mixin h2() {
+  color: $text;
+  font: {
+    family: $ff serif;
+    size: $fs-x11;
+    weight: $fw-m;
+  }
+  line-height: $lh-x13;
+  margin-bottom: $gap-x9;
+  @include adaptive(mobile) {
+    font: {
+      size: $fs-x8;
+    }
+    line-height: $lh-x10;
+    margin-bottom: $gap-x5;
+  }
+}
+@mixin h3() {
+  color: $text;
+  font: {
+    family: $ff serif;
+    size: $fs-x9;
+    weight: $fw-m;
+  }
+  line-height: $lh-x12;
+  margin-bottom: $gap-x9;
+  @include adaptive(mobile) {
+    font: {
+      size: $fs-x7;
+    }
+    line-height: $lh-x9;
+    margin-bottom: $gap-x5;
+  }
+}
+@mixin p() {
+  color: $text;
+  font: {
+    family: $ff serif;
+    size: $fs-x6;
+    weight: $fw-r;
+  }
+  line-height: $lh-x8;
+  margin-bottom: $gap-x9;
+  @include adaptive(mobile) {
+    font: {
+      size: $fs-x5;
+      line-height: $lh-x7;
+    }
+    margin-bottom: $gap-x5;
+  }
+}
+@mixin ul() {
+  color: $text;
+  margin-bottom: $gap-x9;
+  @include adaptive(mobile) {
+    margin-bottom: $gap-x5;
+  }
+  li {
+    font: {
+      family: $ff serif;
+      size: $fs-x6;
+      weight: $fw-r;
+    }
+    line-height: $lh-x8;
+    margin-bottom: $gap-x5;
+    position: relative;
+    padding-left: $gap-x7;
+    @include adaptive(mobile) {
+      font: {
+        size: $fs-x5;
+      }
+      line-height: $lh-x7;
+    }
+    &::before {
+      content: '';
+      width: $size-x2;
+      height: $size-x2;
+      display: block;
+      position: absolute;
+      background: $primary;
+      border-radius: $br-100;
+      top: $gap-x2;
+      left: $gap-x0;
+    }
+    @include adaptive(mobile) {
+      margin-bottom: $gap-x4;
+    }
+  }
+}
+@mixin ol() {
+  counter-reset: ol-counter;
+  color: $text;
+  margin-bottom: $gap-x9;
+  @include adaptive(mobile) {
+    margin-bottom: $gap-x5;
+  }
+  li {
+    font: {
+      family: $ff serif;
+      size: $fs-x6;
+      weight: $fw-r;
+    }
+    line-height: $lh-x8;
+    margin-bottom: $gap-x5;
+    position: relative;
+    padding-left: $gap-x7;
+    @include adaptive(mobile) {
+      font: {
+        size: $fs-x5;
+      }
+      line-height: $lh-x7;
+    }
+    &::before {
+      color: $primary;
+      content: counter(ol-counter)'.';
+      counter-increment: ol-counter;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+@mixin blockquote() {
+  @include p;
+  color: $gray;
+  font-style: italic;
+  padding: $gap-x7 $gap-x9;
+  background: $blockquote;
+  border-radius: $br-x5;
+  @include adaptive(mobile) {
+    padding: $lh-x7 $lh-x10;
+  }
+}
+@mixin hr() {
+  width: $size-100;
+  @include border(0,0,1,0,$text,.2);
+  margin-bottom: $gap-x9;
+  @include adaptive(mobile) {
+    margin-bottom: $gap-x5;
+  }
+}
+@mixin table() {
+  width: $size-100;
+  border-collapse: collapse;
+  margin-bottom: $gap-x9;
+  @include adaptive(mobile) {
+    margin-bottom: $gap-x5;
+  }
+  thead {
+    tr {
+      th {
+        @include p;
+        @include border(0,0,2,0,$primary,1);
+        padding: $gap-x2;
+        &:first-child {
+          text-align: left;
+        }
+      }
+    }
+  }
+  tbody {
+    tr {
+      td {
+        @include p;
+        @include border(0,0,1,0,$text,.2);
+        padding: $gap-x2;
+        &:not(:first-child) {
+          text-align: center;
+        }
+      }
+      &:last-child {
+        td {
+          border: 0;
+        }
+      }
+    }
+  }
+}

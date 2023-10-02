@@ -1,0 +1,62 @@
+.radio {
+  &-control {
+    margin-bottom: $gap-x5;
+    cursor: pointer;
+    @include flex(row,flex-start,center);
+
+    input {
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+
+      &:checked {
+        & ~ .radio-control__indicator {
+          border-color: $gray;
+
+          &:after {
+            display: block;
+          }
+        }
+      }
+      &:disabled {
+        & ~ .radio-control__indicator {
+          background: transparent;
+          opacity: .4;
+          pointer-events: none;
+
+          &:after {
+            background: transparent;
+          }
+        }
+      }
+    }
+    &__indicator {
+      height: $size-x5;
+      width: $size-x5;
+      border-radius: $br-100;
+      position: relative;
+      margin-right: $gap-x3;
+      border: $bw-x0-5 solid $gray;
+
+      &:after {
+        box-sizing: unset;
+        content: '';
+        position: absolute;
+        display: none;
+        left: $gap-x1;
+        top: $gap-x1;
+        height: $size-x3;
+        width: $size-x3;
+        border-radius: $br-100;
+        background: $primary;
+      }
+    }
+    &:hover {
+      .radio-control__indicator {
+        &:after {
+          display: block;
+        }
+      }
+    }
+  }
+}

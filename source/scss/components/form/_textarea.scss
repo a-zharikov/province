@@ -1,0 +1,51 @@
+textarea {
+  width: $size-100;
+  min-height: $size-x19;
+  border: $bw-x0-5 solid $gray;
+  border-radius: $br-x2;
+  box-sizing: border-box;
+  padding: $gap-x3 $gap-x4;
+  resize: vertical;
+  color: $text;
+  font: {
+    size: $fs-x4;
+    family: $ff;
+  }
+  @include transition(all,200ms);
+  &::-webkit-resizer {
+    display: block;
+    width: $size-x1;
+    height: $size-x1;
+    background: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 27.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Слой_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 11 11' style='enable-background:new 0 0 11 11;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill-rule:evenodd;clip-rule:evenodd;fill:%23888888;%7D%0A%3C/style%3E%3Cpath class='st0' d='M0.4,8.9c0.3,0.3,0.7,0.3,0.9,0l7.5-7.5c0.3-0.3,0.3-0.7,0-0.9c-0.3-0.3-0.7-0.3-0.9,0L0.4,7.9 C0.1,8.2,0.1,8.6,0.4,8.9z M9.4,10.3l0.9-0.9c0.3-0.3,0.3-0.7,0-0.9c-0.3-0.3-0.7-0.3-0.9,0L8.4,9.4c-0.3,0.3-0.3,0.7,0,0.9 C8.7,10.6,9.1,10.6,9.4,10.3z M9.8,5.1L5.1,9.8c-0.3,0.3-0.7,0.3-0.9,0c-0.3-0.3-0.3-0.7,0-0.9l4.7-4.7c0.3-0.3,0.7-0.3,0.9,0 C10.1,4.4,10.1,4.9,9.8,5.1z'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 60%;
+  }
+  &:focus {
+    border-color: $primary;
+    &::-webkit-resizer {
+      display: block;
+      width: $size-x1;
+      height: $size-x1;
+      background: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 27.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Слой_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 11 11' style='enable-background:new 0 0 11 11;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill-rule:evenodd;clip-rule:evenodd;fill:%2340b4ea;%7D%0A%3C/style%3E%3Cpath class='st0' d='M0.4,8.9c0.3,0.3,0.7,0.3,0.9,0l7.5-7.5c0.3-0.3,0.3-0.7,0-0.9c-0.3-0.3-0.7-0.3-0.9,0L0.4,7.9 C0.1,8.2,0.1,8.6,0.4,8.9z M9.4,10.3l0.9-0.9c0.3-0.3,0.3-0.7,0-0.9c-0.3-0.3-0.7-0.3-0.9,0L8.4,9.4c-0.3,0.3-0.3,0.7,0,0.9 C8.7,10.6,9.1,10.6,9.4,10.3z M9.8,5.1L5.1,9.8c-0.3,0.3-0.7,0.3-0.9,0c-0.3-0.3-0.3-0.7,0-0.9l4.7-4.7c0.3-0.3,0.7-0.3,0.9,0 C10.1,4.4,10.1,4.9,9.8,5.1z'/%3E%3C/svg%3E%0A");
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: 60%;
+    }
+  }
+  &:disabled {
+    opacity: .2;
+  }
+  &.error {
+    border-color: $danger;
+    &::-webkit-resizer {
+      display: block;
+      width: $size-x1;
+      height: $size-x1;
+      background: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 27.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Слой_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 11 11' style='enable-background:new 0 0 11 11;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill-rule:evenodd;clip-rule:evenodd;fill:%23ea4040;%7D%0A%3C/style%3E%3Cpath class='st0' d='M0.4,8.9c0.3,0.3,0.7,0.3,0.9,0l7.5-7.5c0.3-0.3,0.3-0.7,0-0.9c-0.3-0.3-0.7-0.3-0.9,0L0.4,7.9 C0.1,8.2,0.1,8.6,0.4,8.9z M9.4,10.3l0.9-0.9c0.3-0.3,0.3-0.7,0-0.9c-0.3-0.3-0.7-0.3-0.9,0L8.4,9.4c-0.3,0.3-0.3,0.7,0,0.9 C8.7,10.6,9.1,10.6,9.4,10.3z M9.8,5.1L5.1,9.8c-0.3,0.3-0.7,0.3-0.9,0c-0.3-0.3-0.3-0.7,0-0.9l4.7-4.7c0.3-0.3,0.7-0.3,0.9,0 C10.1,4.4,10.1,4.9,9.8,5.1z'/%3E%3C/svg%3E%0A");
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: 60%;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+select {
+  width: $size-100;
+  border: $bw-x0-5 solid $gray;
+  border-radius: $br-x2;
+  box-sizing: border-box;
+  padding: $gap-x3 $gap-x4;
+  position: relative;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: $text;
+  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.1' id='Слой_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 737 768' style='enable-background:new 0 0 737 768;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:%23888888;%7D%0A%3C/style%3E%3Cpath class='st0' d='M548.8,244.4L368.3,424.9L187.7,244.4c-18.1-18.1-47.5-18.1-65.6,0s-18.1,47.5,0,65.6l213.6,213.6 c8.7,8.7,20.5,13.6,32.8,13.6s24.1-4.9,32.8-13.6L614.9,310c18.1-18.1,18.1-47.5,0-65.6C596.8,226.7,567,226.2,548.8,244.4 L548.8,244.4z'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: calc($size-100 - $gap-x4) center;
+  background-size: $size-x5;
+  font: {
+    size: $fs-x4;
+  }
+  @include transition;
+  &:focus {
+    border-color: $primary;
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.1' id='Слой_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 737 768' style='enable-background:new 0 0 737 768;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:%2340b4ea;%7D%0A%3C/style%3E%3Cpath class='st0' d='M548.8,244.4L368.3,424.9L187.7,244.4c-18.1-18.1-47.5-18.1-65.6,0s-18.1,47.5,0,65.6l213.6,213.6 c8.7,8.7,20.5,13.6,32.8,13.6s24.1-4.9,32.8-13.6L614.9,310c18.1-18.1,18.1-47.5,0-65.6C596.8,226.7,567,226.2,548.8,244.4 L548.8,244.4z'/%3E%3C/svg%3E%0A");
+  }
+  &:disabled {
+    opacity: .2;
+  }
+  &.error {
+    border-color: $danger;
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.1' id='Слой_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 737 768' style='enable-background:new 0 0 737 768;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:%23ea4040;%7D%0A%3C/style%3E%3Cpath class='st0' d='M548.8,244.4L368.3,424.9L187.7,244.4c-18.1-18.1-47.5-18.1-65.6,0s-18.1,47.5,0,65.6l213.6,213.6 c8.7,8.7,20.5,13.6,32.8,13.6s24.1-4.9,32.8-13.6L614.9,310c18.1-18.1,18.1-47.5,0-65.6C596.8,226.7,567,226.2,548.8,244.4 L548.8,244.4z'/%3E%3C/svg%3E%0A");
+  }
+}

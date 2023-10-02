@@ -1,0 +1,25 @@
+@import 'form/input';
+@import 'form/file';
+@import 'form/radio';
+@import 'form/checkbox';
+@import 'form/select';
+@import 'form/textarea';
+.form {
+  width: $size-100;
+  box-sizing: border-box;
+
+  &-row {
+    margin-bottom: $gap-x4;
+
+    .label {
+      @include p;
+      margin-bottom: $gap-x2;
+      @include flex(row,space-between,center);
+    }
+    &.error {
+      .label {
+        color: $danger;
+      }
+    }
+  }
+}
