@@ -14,5 +14,6 @@
 @mixin mobile_scroll {
   &::-webkit-scrollbar {
     width: 0;
+    height: 0;
   }
 }

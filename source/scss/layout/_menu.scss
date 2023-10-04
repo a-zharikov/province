@@ -107,30 +107,6 @@ nav {
     }
   }
 
-  .city {
-    margin-top: $gap-x9;
-    gap: $gap-x2;
-    text-transform: uppercase;
-    cursor: pointer;
-    position: relative;
-    @include flex(row,center,center);
-
-    &__label {
-      opacity: .4;
-      @include font($fs-x3,$lh-x3,$fw-sb);
-    }
-
-    &__name {
-      @include font($fs-x4,$lh-x4,$fw-sb);
-      gap: $gap-x1;
-      @include flex(flex,center,center);
-
-      i {
-        color: $danger;
-      }
-    }
-  }
-
   .social {
     margin-top: $gap-x5;
     gap: $gap-x4;

@@ -28,6 +28,10 @@
     &__label {
       opacity: .4;
       @include font($fs-x3,$lh-x3,$fw-sb);
+
+      @include adaptive(mobile) {
+        display: none;
+      }
     }
 
     &__name {
@@ -35,8 +39,21 @@
       gap: $gap-x1;
       @include flex(flex,center,center);
 
+      @include adaptive(mobile) {
+        @include font($fs-x2,$lh-x2,$fw-sb);
+        @include flex(column,center,center);
+
+        span {
+          display: none;
+        }
+      }
+
       i {
         color: $danger;
+
+        @include adaptive(mobile) {
+          font-size: $icon-x5;
+        }
       }
     }
 
@@ -47,6 +64,7 @@
       background: $white;
       border-radius: $br-x3;
       padding: $gap-x5 $gap-x8;
+      box-sizing: border-box;
       box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.04);
       column-count: 2;
       column-gap: $gap-x10;
@@ -57,9 +75,9 @@
       @include transition;
 
       @include adaptive(mobile) {
-        position: relative;
-        top: $gap-x6;
-        display: none;
+        width: calc(100% - $gap-x6);
+        top: $gap-x19;
+        right: $gap-x3;
       }
 
       &::before {
@@ -70,12 +88,11 @@
         border-width: 0 10px 12px 10px;
         border-color: transparent transparent $white transparent;
         position: absolute;
-        top: -12px;
-        right: 24px;
+        top: -$gap-x3;
+        right: $gap-x6;
 
         @include adaptive(mobile) {
-          right: 50%;
-          margin-right: -6px;
+          right: $gap-x11;
         }
       }
 
@@ -129,7 +146,6 @@
         transform: translateY(0px);
 
         @include adaptive(mobile) {
-          display: block;
           margin-bottom: $gap-x5;
         }
       }

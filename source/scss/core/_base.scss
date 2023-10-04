@@ -2,15 +2,17 @@ body {
   color: $text;
   font-family: $ff;
   background: $body;
-  overflow-x: hidden;
+  box-sizing: border-box;
 
   .container {
+    min-width: 1024px;
     max-width: 1400px;
     padding: 0 $gap-x5;
     margin: 0 auto;
     box-sizing: border-box;
 
     @include adaptive(mobile) {
+      min-width: 100%;
       max-width: 100%;
       padding: 0 $gap-x3;
     }

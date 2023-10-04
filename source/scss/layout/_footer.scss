@@ -4,6 +4,7 @@
   padding: $gap-x6;
   border-radius: $br-x3 $br-x3 0 0;
   box-sizing: border-box;
+  overflow: hidden;
 
   @include adaptive(mobile) {
     padding: $gap-x5 $gap-x3;

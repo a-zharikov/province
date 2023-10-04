@@ -24,7 +24,7 @@ $ff: 'Open Sans', sans-serif;
 
 // Icons
 $icons: "Icons";
-@include font-face($icons,  '/fonts/icon/', 'icon', 'icon');
+@include font-face($icons,  '../fonts/icon/', 'icon', 'icon');
 
 [class^="icon"], [class*=" icon"] {
   font-family: $icons !important;

@@ -1,0 +1,52 @@
+.feed-item {
+  color: $text;
+  background: $white;
+  text-decoration: none;
+  border-radius: $br-x3;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,.04);
+  transform: scale(1);
+  display: block;
+  @include transition;
+
+  img {
+    max-width: 100%;
+    border-radius: $br-x3 $br-x3 0 0;
+  }
+
+  .title {
+    padding: $gap-x5 $gap-x5 $gap-x3;
+    letter-spacing: 0.1px;
+    box-sizing: border-box;
+    @include font($fs-x5,$fs-x6,$fw-sb);
+  }
+
+  .text {
+    padding: 0 $gap-x5 $gap-x5;
+    letter-spacing: 0.08px;
+    box-sizing: border-box;
+    @include font($fs-x4,$fs-x5,$fw-r);
+  }
+
+  &.__accent {
+    padding: $gap-x2 $gap-x2 0;
+    box-sizing: border-box;
+    background: $accent;
+
+    img {
+      border-radius: $br-x3;
+    }
+
+    .title {
+      padding: $gap-x4 $gap-x2 $gap-x3;
+    }
+
+    .text {
+      padding: 0 $gap-x2 $gap-x3;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.01);
+    box-shadow: 0 4px 24px 0 rgba(0,0,0,.2);
+  }
+}
