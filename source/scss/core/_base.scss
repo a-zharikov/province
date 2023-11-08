@@ -3,6 +3,7 @@ body {
   font-family: $ff;
   background: $body;
   box-sizing: border-box;
+  overflow-x: hidden;
 
   .container {
     min-width: 1024px;

@@ -11,6 +11,7 @@
   img {
     max-width: 100%;
     border-radius: $br-x3 $br-x3 0 0;
+    object-fit: cover;
   }
 
   .title {

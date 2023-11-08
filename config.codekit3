@@ -756,8 +756,8 @@
     "creationDate" : 709629239.45561898,
     "displayValue" : "province",
     "displayValueWasSetByUser" : 0,
-    "iconImageName" : "logo-vue",
-    "iconImageWasSetByUser" : 0
+    "iconImageName" : "brackets_orange",
+    "iconImageWasSetByUser" : 1
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,
