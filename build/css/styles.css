@@ -9158,6 +9158,16 @@ textarea.error::-webkit-resizer {
   align-items: center;
 }
 @media (max-width: 799px) {
+  .header {
+    width: 100%;
+    position: fixed;
+    margin: 0;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+    top: 0;
+    z-index: 1;
+    background: #FFFEF4;
+  }
   .header img {
     height: 48px;
   }
@@ -9326,6 +9336,10 @@ textarea.error::-webkit-resizer {
   .header-city__all.active {
     margin-bottom: 20px;
   }
+}
+
+.fix {
+  height: 48px;
 }
 
 nav {

@@ -1,11 +1,11 @@
 // Функция для обновления высоты элементов при изменении размера окна браузера
-function updateHeights() {
-  var feedHeight = $('.main-wrapper__feed').height();
-  var bannerHeight = $('.content-sidebar__bnr').height();
+// function updateHeights() {
+//   var feedHeight = $('.main-wrapper__feed').height();
+//   var bannerHeight = $('.content-sidebar__bnr').height();
 
-  $('.content-news').css('height', feedHeight + 'px');
-  $('.content-sidebar__wrapper').css('height', feedHeight - bannerHeight - 36 + 'px');
-}
+//   $('.content-news').css('height', feedHeight + 'px');
+//   $('.content-sidebar__wrapper').css('height', feedHeight - bannerHeight - 36 + 'px');
+// }
 
 $(document).ready(function(){
   // Выбор города

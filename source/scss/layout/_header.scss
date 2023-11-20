@@ -3,6 +3,15 @@
   @include flex(row,space-between,center);
 
   @include adaptive(mobile) {
+    width: 100%;
+    position: fixed;
+    margin: 0;
+    padding-top: $gap-x2 !important;
+    padding-bottom: $gap-x2 !important;
+    top: 0;
+    z-index: 1;
+    background: $body;
+
     img {
       height: 48px;
     }
@@ -151,4 +160,8 @@
       }
     }
   }
+}
+
+.fix {
+  height: 48px;
 }
